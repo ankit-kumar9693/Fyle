@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tax Calculator</h1>
+        <div class="input-container">
+            <label for="age">Age:</label>
+            <select id="age" required>
+                <option value="" disabled selected>Select Age Group</option>
+                <option value="<40">&lt;40</option>
+                <option value="40-60">&ge;40 &lt;60</option>
+                <option value="≥60">&ge;60</option>
+            </select>
+            <div class="error-icon" id="age-error-icon" title="Age is mandatory"></div>
+        </div>
+        <div class="input-container">
+            <label for="income">Gross Annual Income (₹):</label>
+            <input type="number" id="income" placeholder="Enter your gross annual income" required>
+            <div class="error-icon" id="income-error-icon" title="Invalid input"></div>
+        </div>
+        <div class="input-container">
+            <label for="extra-income">Extra Income (₹):</label>
+            <input type="number" id="extra-income" placeholder="Enter extra income if any">
+            <div class="error-icon" id="extra-income-error-icon" title="Invalid input"></div>
+        </div>
+        <div class="input-container">
+            <label for="deductions">Deductions (₹):</label>
+            <input type="number" id="deductions" placeholder="Enter your deductions if any">
+            <div class="error-icon" id="deductions-error-icon" title="Invalid input"></div>
+        </div>
+        <button onclick="validateInputs()">Calculate Tax</button>
+    </div>
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
